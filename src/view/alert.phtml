@@ -1,0 +1,13 @@
+<?php
+$flash = $this->flash;
+if (!isset($flash)) {
+    $flash = $this->flashSession;
+}
+?>
+<?php if (isset($flash)): ?>
+    <div class="row">
+        <div class="col-xs-12">
+            <?php $flash->output() ?>
+        </div>
+    </div>
+<?php endif ?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace test\transform;
+namespace phalconer\test\transform;
 
 trait CastStringToEmpty
 {

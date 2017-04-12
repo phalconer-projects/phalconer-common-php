@@ -28,24 +28,20 @@ abstract class AbstractServiceProvider extends Component
                 sprintf('The service defined in "%s" cannot have an empty name.', get_class($this))
             );
         }
-        
-        if (empty($config)) {
-            $config = config('services.' . $this->serviceName, $config);
-        }
+
         $this->config = $config;
         
         $this->setDI($di);
         $this->configure();
     }
-    
+
     /**
-     * @return string
+     * @return void
      */
-    public function getName()
+    public function configure()
     {
-        return $this->serviceName;
     }
-    
+
     /**
      * @return void
      */
@@ -54,9 +50,10 @@ abstract class AbstractServiceProvider extends Component
     }
     
     /**
-     * @return void
+     * @return string
      */
-    public function configure()
+    public function getName()
     {
+        return $this->serviceName;
     }
 }

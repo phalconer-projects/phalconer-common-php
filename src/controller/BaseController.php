@@ -10,7 +10,7 @@ class BaseController extends Controller
 {
     public $defaultRole = 'guest';
     
-    public $acessErrorRedirect = 'error/access';
+    public $accessErrorRedirect = 'error/access';
     
     public $accessErrorMessage = 'You do not have permission to access this area';
     
@@ -54,8 +54,8 @@ class BaseController extends Controller
             if ($this->accessErrorMessage) {
                 $this->flash->error($this->accessErrorMessage);
             }
-            if ($this->acessErrorRedirect) {
-                $this->response->redirect($this->acessErrorRedirect);
+            if ($this->accessErrorRedirect) {
+                $this->response->redirect($this->accessErrorRedirect);
             }
 
             // Stop the dispatcher at the current operation
